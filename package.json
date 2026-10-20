@@ -4,6 +4,12 @@
   "description": "人格卡：在设置里切换 / 编辑人格卡，实时改变 agent 的系统提示人格层。",
   "type": "module",
   "main": "lib/index.js",
+  "scripts": {
+    "sync": "node sync.mjs",
+    "sync:restart": "node sync.mjs --restart",
+    "sync:list": "node sync.mjs --list",
+    "check": "node --check lib/index.js && node --check lib/client.js"
+  },
   "exports": {
     ".": "./lib/index.js",
     "./client": "./lib/client.js",

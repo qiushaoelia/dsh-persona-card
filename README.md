@@ -173,7 +173,31 @@ node --check lib/index.js
 node --check lib/client.js
 ```
 
-改完把 `lib/` 同步到 `~/.dsh/profiles/<profile>/vendor/dsh-persona-card/`，重启 dsh 生效。
+### 同步到 profile
+
+改完源码要同步到 profile 的 `vendor/` 目录，否则跑的还是旧代码。仓库带了一个同步脚本：
+
+```bash
+node sync.mjs                    # 同步到默认 profile(优先 desktop)
+node sync.mjs web                # 指定 profile
+node sync.mjs --list             # 列出所有 profile 及安装状态
+node sync.mjs desktop --restart  # 同步后自动重启 DSH
+```
+
+也可以走 npm script：
+
+```bash
+pnpm run sync
+pnpm run sync:restart
+```
+
+脚本只复制 `lib/`、`package.json`、`cordis.patch.yml` 三项，不碰 README、LICENSE、`cards/`。
+目标目录会先清空再写入，避免改名后残留旧文件。
+
+> 为什么需要这一步：profile 里的 `node_modules/dsh-persona-card` 是指向
+> `vendor/dsh-persona-card` 的软链，而 `vendor` 是实体副本。改源码不会自动生效。
+
+重启 dsh 后生效。热更新只增不删，插件名或 bundle 组合变动**必须**重启。
 
 ## 与 DeepSeek Harness 的关系
 
