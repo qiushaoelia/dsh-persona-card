@@ -1,0 +1,4 @@
+# dsh-persona-card bundle patch: inserts the persona row into the profile.
+- insert:
+    - id: persona-card
+      name: 'dsh-persona-card'
