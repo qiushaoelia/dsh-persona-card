@@ -33,7 +33,7 @@ DSH 的出厂人格是写死在组合配置里的：想换一种说话方式，�
 # 以 web profile 为例，desktop profile 把 web 换成 desktop
 cd ~/.dsh/profiles/web
 mkdir -p vendor
-git clone https://github.com/USERNAME/dsh-persona-card.git vendor/dsh-persona-card
+git clone https://github.com/qiushaoelia/dsh-persona-card.git vendor/dsh-persona-card
 ```
 
 ### 2. 声明依赖

@@ -26,10 +26,15 @@
     "system-prompt"
   ],
   "license": "MIT",
+  "author": "qiushaoelia",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/USERNAME/dsh-persona-card.git"
+    "url": "git+https://github.com/qiushaoelia/dsh-persona-card.git"
   },
+  "bugs": {
+    "url": "https://github.com/qiushaoelia/dsh-persona-card/issues"
+  },
+  "homepage": "https://github.com/qiushaoelia/dsh-persona-card#readme",
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
